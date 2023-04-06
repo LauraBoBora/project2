@@ -1,28 +1,24 @@
+// Dependencies
+require('dotenv').config();
 const express = require('express');
+const morgan = require('morgan'); 
+const methodOverride = require('method-override');
 const app = express();
-const PORT = 3000;
-// Controller
-const booksController = require('./controllers/books');
 
-// controllers - routes
-// views - EJS files (html & js)
-
-// Middleware req -> middleware -> res
-app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended:false})); // without urlencoded we get req.body undefined
-app.use(express.json()); //parse JSON data in the request body
+// Middleware  req -> middleware -> res
+app.use(morgan("tiny")) //logging
+app.use(methodOverride("_method")) // override for put and delete requests from forms
+app.use(express.urlencoded({extended: true})) // parse urlencoded request bodies
+app.use(express.static("public")) // serve files from public statically
 
 app.get('/', (req, res) => {
-    res.render('home.ejs');
+    res.send('default route')
 })
 
+const booksController = require('./controllers/books');
 app.use('/books', booksController);
 
-app.get('/*', (req, res) => {
-    res.render("404.ejs")
-})
-
-// Listen at the bottom
-app.listen(port, () => {
-    console.log(`🥔 Server is listening to PORT ${PORT}`)
-})
+// Listener
+app.listen(process.env.PORT, () =>
+	console.log(`express is listening on port: ${process.env.PORT}`)
+);
