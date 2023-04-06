@@ -6,20 +6,20 @@ An app to track books read, leave a 0 to 4 star review, and a blurb.
 
 ## ERD/Trello/Wireframes/Screenshots
 
-![ERD](erdiagram.png)
+![ERD](https://i.imgur.com/eEFg66W.png)
 
 Trello - https://trello.com/b/RfkAGaIs/carina-project2
 
-![index](index.png)
-![show](show.png)
-![new](new.png)
-![update](update.png)
+![index](https://i.imgur.com/vEizTwA.png)
+![show](https://i.imgur.com/kRaKeFH.png)
+![new](https://i.imgur.com/RAkpqoN.png)
+![update](https://i.imgur.com/nXOTbiv.png)
 
 ## Technologies Used
 
 1. HTML5
 2. CSS3
-3. JavaScript
+3. JavaScripthttps://imgur.com/a/CxsCTLM
 4. Express
 5. Node
 6. Nodemon
