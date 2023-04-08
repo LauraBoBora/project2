@@ -25,17 +25,10 @@ router.get('/seed', (req, res) => {
 	})	
 });
 
-// SHOW
-router.get('/:id', async (req, res) => {
-	const book = await Book.findById(req.params.id);
-	res.render("books/show.ejs", {book})
+// NEW
+router.get('/new', (req, res) => {
+	res.render("books/new.ejs");
 });
-
-// literally any route
-router.get('/add', (req, res) => {
-	console.log("hello");
-	res.redirect('/books');
-})
 
 // POST
 router.post('/', async (req, res) => {
@@ -43,5 +36,10 @@ router.post('/', async (req, res) => {
 	res.redirect('/books');
 });
 
+// SHOW - generic! leave at bottom
+router.get('/:id', async (req, res) => {
+	const book = await Book.findById(req.params.id);
+	res.render("books/show.ejs", {book})
+});
 
 module.exports = router;

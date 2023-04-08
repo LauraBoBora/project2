@@ -1,6 +1,24 @@
 <%- include('../partials/head.ejs') %>
 <body>
     <%- include("../partials/header.ejs") %>
-    <h1> Hello </h1>
+    <main>
+        <div>
+            <form action="/books" method="post">
+                <fieldset>
+                    <legend>Add a Book</legend>
+                    <label>
+                        TITLE:<input type="text" name="title" placeholder="enter title" />
+                    </label>
+                    <label>
+                        AUTHOR:<input type="text" name="author" placeholder="enter author" />
+                    </label>
+                    <label>
+                        COVER:<input type="url" name="cover" placeholder="enter cover url" />
+                    </label>
+                </fieldset>
+                <input type="submit" value="add book" />
+            </form>
+        </div>
+    </main>
 </body>
 </html>
