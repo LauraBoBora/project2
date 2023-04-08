@@ -19,12 +19,15 @@ Trello - https://trello.com/b/RfkAGaIs/carina-project2
 
 1. HTML5
 2. CSS3
-3. JavaScripthttps://imgur.com/a/CxsCTLM
+3. JavaScript
 4. Express
 5. Node
 6. Nodemon
 7. MongoDB
 8. Mongoose
+9. dotenv
+10. EJS
+11. Bootstrap
 
 ## Getting Started
 
