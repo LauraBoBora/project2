@@ -5,8 +5,8 @@
         <div>
 
             <article>
-              <h2><%= book.title %></h2>
-              <h3><%= book.author %></h3>
+              <h2 class="book-title"><%= book.title %></h2>
+              <h3 class="book-title"><%= book.author %></h3>
               <img src="<%= book.cover %>"/>
               <a href="/books/<%= book._id %>/edit"><button>Edit</button></a>
               <form action="/books/<%= book._id %>?_method=DELETE" method="POST">

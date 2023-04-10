@@ -5,11 +5,11 @@
         <div>
             <a href="/books/new"><button>Add a Book</button></a>
         </div>
-        <div class="row">
+        <div class="row book-index">
             <% for(book of books) { %>
                     <div class="col-sm-3"><a href="/books/<%= book._id %>">
                     <img src="<%= book.cover %>" class="img-thumbnail" style="width: 200px; height: 300px" alt="book cover">
-                    <h3><%= book.title %></h3>
+                    <h3 class="book-title"><%= book.title %></h3>
                 </a></div>
             <% } %>
             </div></div>

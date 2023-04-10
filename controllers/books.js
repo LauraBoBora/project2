@@ -3,7 +3,7 @@ const router = express.Router();
 const startBooks = require('../db/bookSeedData.js')
 const Book = require('../models/book.js')
 
-// INDEX
+// INDEX - show all books
 router.get('/', async (req, res) => {
 	// wait for this to complete
 	// Book.find() is a Promise
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 	res.render("books/index.ejs", {books});
 });
 
-// SEED
+// SEED - stock data
 router.get('/seed', (req, res) => {
 	Book.deleteMany({}) // delete what was there
 	.then(() => {
@@ -25,21 +25,41 @@ router.get('/seed', (req, res) => {
 	})	
 });
 
-// NEW
+// NEW - page with form to add book
 router.get('/new', (req, res) => {
 	res.render("books/new.ejs");
 });
 
-// POST
+// EDIT - page with form to edit book
+router.get('/:id/edit', async (req, res) => {
+	const book = await Book.findById(req.params.id);
+	res.render("books/edit.ejs", {book})
+})
+
+// SHOW - show one book. generic! leave at bottom of gets
+router.get('/:id', async (req, res) => {
+	const book = await Book.findById(req.params.id);
+	res.render("books/show.ejs", {book})
+});
+
+// EDIT - edit a book
+router.put('/:id', async (req, res) => {
+	const book = await Book.findByIdAndUpdate(req.params.id, req.body, {
+		new: true,
+	});
+	res.redirect('/books');
+});
+
+// POST - add a book
 router.post('/', async (req, res) => {
 	const book = await Book.create(req.body);
 	res.redirect('/books');
 });
 
-// SHOW - generic! leave at bottom
-router.get('/:id', async (req, res) => {
-	const book = await Book.findById(req.params.id);
-	res.render("books/show.ejs", {book})
+// DELETE - delete a book
+router.delete('/:id', async (req, res) => {
+	const book = await Book.findByIdAndDelete(req.params.id);
+	res.redirect('/books');
 });
 
 module.exports = router;

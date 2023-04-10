@@ -1,0 +1,39 @@
+<%- include('../partials/head.ejs') %>
+<body>
+    <%- include("../partials/header.ejs") %>
+<main>
+    <div>
+      <form action="/books/<%= book._id %>?_method=PUT" method="post">
+        <fieldset>
+          <legend>Edit <%= book.title %></legend>
+          <label>
+            TITLE:<input
+              type="text"
+              name="title"
+              value="<%= book.title %>"
+              placeholder="enter title"
+            />
+          </label>
+          <label>
+            AUTHOR:<input
+              type="text"
+              name="author"
+              value="<%= book.author %>"
+              placeholder="enter author"
+            />
+          </label>
+          <label>
+            COVER:<input 
+            type="url" 
+            name="cover"
+            value="<%= book.cover %>"
+            placeholder="enter cover url"
+            />
+          </label>
+        </fieldset>
+        <input type="submit" value="Update <%= book.title %>" />
+      </form>
+    </div>
+  </main>
+</body>
+</html>
