@@ -1,11 +1,47 @@
+/* normalize */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header */
 h1 {
     font-family: 'Libre Baskerville', serif;
     text-align: center;
     background-color:antiquewhite
 }
 
+/* the rest */ 
 body {
-    /* background-image: url("https://c1.wallpaperflare.com/preview/281/150/428/various-book-books.jpg") */
+    /* background-image: url("https://c1.wallpaperflare.com/preview/281/150/428/various-book-books.jpg"); */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Libre Baskerville, serif';
+    background: linear-gradient(45deg);
+}
+
+.star {
+    font-size: 2rem;
+    color: #ff9800;
+    background-color: antiquewhite;
+    border: none;
+}
+
+.star-rating {
+    user-select: none;
+    background-color: antiquewhite;
+    padding: .2rem .2rem;
+    margin: .2rem;
+    border-radius: .1rem;
+
+}
+
+.star:hover {
+    cursor: pointer;
 }
 
 .book-index {
@@ -17,3 +53,5 @@ body {
     text-align: center;
     background-color:antiquewhite
 }
+
+/* stars */

@@ -8,7 +8,9 @@ const Schema = mongoose.Schema;
 const booksSchema = new Schema({
     title: String,
     author: String,
-    cover: String
+    cover: String, 
+    stars: Number, 
+    blurb: String
 });
 
 // create Book model

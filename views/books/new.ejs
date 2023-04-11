@@ -7,13 +7,38 @@
                 <fieldset>
                     <legend>Add a Book</legend>
                     <label>
-                        TITLE:<input type="text" name="title" placeholder="enter title" />
+                        TITLE:<input 
+                        type="text" 
+                        name="title" 
+                        placeholder="enter title" />
                     </label>
                     <label>
-                        AUTHOR:<input type="text" name="author" placeholder="enter author" />
+                        AUTHOR:<input 
+                        type="text" 
+                        name="author" 
+                        placeholder="enter author" />
                     </label>
                     <label>
-                        COVER:<input type="url" name="cover" placeholder="enter cover url" />
+                        COVER:<input 
+                        type="url" 
+                        name="cover" 
+                        placeholder="enter cover url" />
+                    </label>
+                    <label>
+                        RATING: 
+                    <div class="row-sm-3 star-rating">
+                        <input id="star5" name="star" type="radio" value="&#9734" class="star" display=""/>
+                        <label for="star5">&#9734</label>
+                        <input id="star4" name="star" type="button" value="&#9734" class="star" />
+                        <label for="star4"></label>
+                        <input id="star3" name="star" type="button" value="&#9734" class="star" />
+                        <label for="star3"></label>
+                        <input id="star2" name="star" type="button" value="&#9734" class="star" />
+                        <label for="star2"></label>
+                        <input id="star1" name="star" type="button" value="&#9734" class="star" />
+                        <label for="star1"></label>
+                        <div class="clear"></div>
+                    </div>
                     </label>
                 </fieldset>
                 <input type="submit" value="add book" />
