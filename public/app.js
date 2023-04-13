@@ -7,5 +7,5 @@ allStars.forEach((star, i) => {
         console.log(current_star_level);
         allStars.forEach((star, j) => {
             if (current_star_level >= j+1) {
-                star.innerHTML = '&#9733';}
-            else {star.innerHTML = '&#9734';}})}});
+                star.value = "★"}
+            else {star.value = "☆"}})}});
