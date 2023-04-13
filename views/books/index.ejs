@@ -8,18 +8,12 @@
         <div class="row book-index">
             <% for(book of books) { %>
                     <div class="col-sm-3"><a href="/books/<%= book._id %>">
-                    <img src="<%= book.cover %>" class="img-thumbnail" style="width: 200px; height: 300px" alt="book cover">
-                    <h3 class="book-title"><%= book.title %></h3></a>
-                    <div class="row-sm-3 star-rating">
-                        <button class="star-rating">&#9734</button>
-                        <button class="star">&#9734</button>
-                        <button class="star">&#9734</button>
-                        <button class="star">&#9734</button>
-                        <button class="star">&#9734</button>
-                     </div>
-                </div>  
+                        <img src="<%= book.cover %>" class="img-thumbnail" style="width: 200px; height: 300px" alt="book cover">
+                        <h3 class="book-title"><%= book.title %></h3></a>
+                        <h3 class="book-rating"><%= book.rating %></h3>
+                        <!-- <p class="book-blurb"><%= book.blurb %></p> -->
+                    </div>  
             <% } %>
-            </div></div>
     </main>
 </body>
 </html>

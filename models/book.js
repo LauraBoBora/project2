@@ -9,7 +9,7 @@ const booksSchema = new Schema({
     title: String,
     author: String,
     cover: String, 
-    stars: Number, 
+    rating: Number, 
     blurb: String
 });
 

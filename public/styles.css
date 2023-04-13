@@ -15,15 +15,17 @@ h1 {
 /* the rest */ 
 body {
     /* background-image: url("https://c1.wallpaperflare.com/preview/281/150/428/various-book-books.jpg"); */
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     font-family: 'Libre Baskerville, serif';
-    background: linear-gradient(45deg);
 }
 
+main {
+    position: relative; top: 25%;  
+}
 
 .book-index {
     text-align: center;
