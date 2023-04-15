@@ -1,11 +1,13 @@
-// stars - https://www.youtube.com/watch?v=fQIerHqB71w
-const allStars = document.querySelectorAll('.star');
-
-allStars.forEach((star, i) => {
-    star.onclick = function() {
-        let current_star_level = i+1;
-        console.log(current_star_level);
-        allStars.forEach((star, j) => {
-            if (current_star_level >= j+1) {
-                star.value = "★"}
-            else {star.value = "☆"}})}});
+myFunc = function(title, bookRating) {
+    console.log('poop')
+    for (let i=0; i<5; i++) {
+        let star = document.createElement("SPAN");
+        let parent = document.getElementById(title);
+        star.classList.add("fa")
+        star.classList.add("fa-star")
+        if (i <= bookRating-1 ) {
+            star.classList.add("checked")
+        }
+        parent.appendChild(star);
+    }
+}

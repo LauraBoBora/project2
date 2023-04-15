@@ -6,12 +6,17 @@
             <a href="/books/new"><button>Add a Book</button></a>
         </div>
         <div class="row book-index">
+            <script> let bookRating = null;</script>
             <% for(book of books) { %>
                     <div class="col-sm-3"><a href="/books/<%= book._id %>">
                         <img src="<%= book.cover %>" class="img-thumbnail" style="width: 200px; height: 300px" alt="book cover">
                         <h3 class="book-title"><%= book.title %></h3></a>
-                        <h3 class="book-rating"><%= book.rating %></h3>
-                        <!-- <p class="book-blurb"><%= book.blurb %></p> -->
+                        <h3 id="<%= book.title %>" class="book-rating"></h3>
+                        <script> 
+                            bookRating = "<%= book.rating %>";
+                            title = "<%= book.title %>"
+                            myFunc(title, bookRating); 
+                        </script>
                     </div>  
             <% } %>
     </main>
