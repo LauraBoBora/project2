@@ -1,5 +1,4 @@
 myFunc = function(title, bookRating) {
-    console.log('poop')
     for (let i=0; i<5; i++) {
         let star = document.createElement("SPAN");
         let parent = document.getElementById(title);
