@@ -1,4 +1,4 @@
-myFunc = function(title, bookRating) {
+makeStars = function(title, bookRating) {
     for (let i=0; i<5; i++) {
         let star = document.createElement("SPAN");
         let parent = document.getElementById(title);

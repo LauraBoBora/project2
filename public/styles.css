@@ -14,7 +14,7 @@ h1 {
 
 /* the rest */ 
 body {
-    /* background-image: url("https://c1.wallpaperflare.com/preview/281/150/428/various-book-books.jpg"); */
+    background-image: url("https://c1.wallpaperflare.com/preview/281/150/428/various-book-books.jpg");
     height: 100%;
     display: flex;
     justify-content: center;
@@ -27,6 +27,10 @@ main {
     margin-top: 100px; 
 }
 
+a:link {
+    text-decoration: none;
+}
+
 .book-index {
     text-align: center;
 }
@@ -34,7 +38,16 @@ main {
 .book-title {
     font-family: 'Libre Baskerville', serif;
     text-align: center;
-    background-color:antiquewhite
+    background-color:antiquewhite;
+    text-decoration: none;
+    color: black;
+}
+
+.book-stars {
+    font-family: 'Libre Baskerville', serif;
+    text-align: center;
+    background-color:antiquewhite;
+    display: inline;
 }
 
 /* blurb on new route */
@@ -151,4 +164,4 @@ main {
 
 .checked {
     color: orange;
-  }
+}
