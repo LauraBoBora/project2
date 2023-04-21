@@ -2,47 +2,40 @@
 <body>
     <%- include("../partials/header.ejs") %>
     <main>
-        <div>
+        <div class="card" style="width: 500px;">
             <form action="/books" method="post">
                 <fieldset>
                     <legend>Add a Book</legend>
-                    <label>
-                        TITLE:<input 
-                        type="text" 
-                        name="title" 
-                        placeholder="enter title" />
-                    </label>
-                    <label>
-                        AUTHOR:<input 
-                        type="text" 
-                        name="author" 
-                        placeholder="enter author" />
-                    </label>
-                    <label>
-                        COVER:<input 
-                        type="url" 
-                        name="cover" 
-                        placeholder="enter cover url" />
-                    </label>
-                    <fieldset class = "star-rating">RATING:<div>
-                        <input type="radio" name="rating" value="1" id="rating1" />
-                        <label for="rating1"><span>1</span></label>
-                        <input type="radio" name="rating" value="2" id="rating2" />
-                        <label for="rating2"><span>2</span></label>
-                         <input type="radio" name="rating" value="3" id="rating3" />
-                        <label for="rating3"><span>3</span></label>
-                         <input type="radio" name="rating" value="4" id="rating4" />
-                        <label for="rating4"><span>4</span></label>
-                         <input type="radio" name="rating" value="5" id="rating5" />
-                        <label for="rating5"><span>5</span></label>
-                    </div></fieldset>
-                    <label>
-                        WHAT DID YA THINK?:<div><input 
-                        type="text" 
-                        name="blurb" 
-                        class="blurb" 
-                        placeholder="thoughts" /></div>
-                    </label>
+                    <div class="mb-3">
+                        <label class="form-label">Title</label>
+                        <input class='form-control' type="text" name="title" placeholder="enter title">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Author</label>
+                        <input class='form-control' type="text" name="author" placeholder="enter author">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Cover Image URL</label>
+                        <input class='form-control' type="url" name="cover" placeholder="enter cover url">
+                    </div>
+                    <fieldset class = "star-rating">Rating
+                        <div>
+                            <input type="radio" name="rating" value="1" id="rating1" />
+                            <label for="rating1"><span>1</span></label>
+                            <input type="radio" name="rating" value="2" id="rating2" />
+                            <label for="rating2"><span>2</span></label>
+                            <input type="radio" name="rating" value="3" id="rating3" />
+                            <label for="rating3"><span>3</span></label>
+                            <input type="radio" name="rating" value="4" id="rating4" />
+                            <label for="rating4"><span>4</span></label>
+                            <input type="radio" name="rating" value="5" id="rating5" />
+                            <label for="rating5"><span>5</span></label> 
+                        </div>
+                    </fieldset>
+                    <div class="mb-3">
+                        <label class="form-label">WHAT DID YA THINK?</label>
+                        <textarea class='form-control' type="text" name="blurb" placeholder="Thoughts"></textarea>
+                    </div>
                 </fieldset>
                 <input type="submit" value="add book" />
             </form>

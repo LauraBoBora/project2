@@ -2,15 +2,21 @@
 <body>
     <%- include("../partials/header.ejs") %>
     <main>
-        <div>
-            <a href="/books/new"><button>Add a Book</button></a>
-        </div>
-        <div class="row book-index">
+        <div class="container">
+            <div class="row bottom-buffer">
+                <div class="col">COL</div>
+                <div class="text-center d-grid gap-2 col-6 mx-auto">
+                    <a href="/books/new"><button class="btn btn-primary btn-lg">Add a Book</button></a>
+                </div>
+                <div class="col">COL</div>
+            </div>
+            <div class="row row-cols-4 g-4 book-index">
             <script> let bookRating = null;</script>
             <% for(book of books) { %>
-                    <div class="col-sm-3"><a href="/books/<%= book._id %>">
-                        <img src="<%= book.cover %>" class="img-thumbnail" style="width: 200px; height: 300px" alt="book cover">
-                        <h3 class="book-title"><%= book.title %></h3></a>
+                <div class="col">
+                    <div class="card text-dark bg-transparent"><a href="/books/<%= book._id %>">
+                        <img src="<%= book.cover %>" class="card-img-top" style="width: 200px; height: 300px" alt="book cover">
+                        <h4 class="card-title book-title"><%= book.title %></h4></a>
                         <h3 class="book-stars" id="<%= book.title %>"></h3>
                         <script> 
                             bookRating = "<%= book.rating %>";
@@ -18,7 +24,10 @@
                             makeStars(title, bookRating); 
                         </script>
                     </div>  
+                </div>
             <% } %>
+            <div class="row"></div>
+        </div>
     </main>
 </body>
 </html>

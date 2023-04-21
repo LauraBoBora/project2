@@ -2,36 +2,20 @@
 <body>
     <%- include("../partials/header.ejs") %>
 <main>
-    <div>
+    <div class="card" style="width: 500px;">
       <form action="/books/<%= book._id %>?_method=PUT" method="post">
+        <div class="mb-3">
         <fieldset>
           <legend>Edit <%= book.title %></legend>
-          <label>
-            TITLE:<input
-              type="text"
-              name="title"
-              value="<%= book.title %>"
-              placeholder="enter title"
-            />
-          </label>
-          <label>
-            AUTHOR:<input
-              type="text"
-              name="author"
-              value="<%= book.author %>"
-              placeholder="enter author"
-            />
-          </label>
-          <label>
-            COVER:<input 
-            type="url" 
-            name="cover"
-            value="<%= book.cover %>"
-            placeholder="enter cover url"
-            />
-          </label>
+          <label class="form-label">Title</label>
+          <input class="form-control" type="text" name="title" placeholder="enter title"/>
+          <label class="form-label">Author</label>
+          <input class="form-control" type="text" name="author" placeholder="enter author"/>
+          <label class="form-label">Cover Image URL</label>
+          <input class="form-control" type="url" name="cover" placeholder="enter url"/>
         </fieldset>
-        <input type="submit" value="Update <%= book.title %>" />
+        </div>
+        <input class='btn btn-primary' type="submit" value="Update <%= book.title %>" />
       </form>
     </div>
   </main>

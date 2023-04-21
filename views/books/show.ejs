@@ -2,25 +2,32 @@
 <body>
     <%- include("../partials/header.ejs") %>
     <main>
-        <div>
-
-            <article>
-              <h2 class="book-title"><%= book.title %></h2>
-              <h3 class="book-title"><%= book.author %></h3>
-              <img src="<%= book.cover %>"/>
-              <h3 id="<%= book.title %>" class="book-rating"></h3>
-              <script> 
-                bookRating = "<%= book.rating %>";
-                title = "<%= book.title %>"
-                myFunc(title, bookRating); 
-              </script>
-              <p><%= book.blurb %></p>
-              <a href="/books/<%= book._id %>/edit"><button>Edit</button></a>
+        <div class="card h-100">
+          <div class="row h-100">
+            <div class="col-md-4">
+              <img src="<%= book.cover %>" class="img-fluid rounded-start"/>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h2 class="card-title book-title"><%= book.title %></h2>
+                <h3 class="card-text book-title"><%= book.author %></h3>
+                <h3 id="<%= book.title %>" class="book-rating"></h3>
+                <p class="card-text"><%= book.blurb %></p>
+              </div>
+              <div class="card-footer">
               <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete"/>
+                <div class="btn-group" role="group">
+                  <a href="/books/<%= book._id %>/edit" class="btn btn-primary">Edit</a>
+                  <input type="submit" value="Delete" class="btn btn-primary"/>
+                  <a href="/books/" class="btn btn-primary">Back to Shop</a>
+              </div>
               </form>
-              <a href="/books/"><button>Back to Shop</button></a>
-            </article>
+            </div>
+            <script> 
+              bookRating = "<%= book.rating %>";
+              title = "<%= book.title %>"
+              myFunc(title, bookRating); 
+            </script>
           </div> 
     </main>
 </body>
